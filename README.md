@@ -1,2 +1,3 @@
 # AIM-Game
-AIM game for shooting
+Check your AIM 
+https://pozitivnuy.github.io/AIM-Game/
