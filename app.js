@@ -24,7 +24,7 @@
 
  board.addEventListener('click', event => {
    if(event.target.classList.contains('circle')) {
-      score++
+      score++;
       event.target.remove();
       createRendomCircle();
    }
@@ -55,14 +55,14 @@
  }
 
  function finishGame(){
-   timeEl.parentNode.classList.add('hide')
-    board.innerHTML = `<h1>Your scope:<spane class = "primary"> ${score}</spane></h1>`
+   timeEl.parentNode.classList.add('hide');
+    board.innerHTML = `<h1>Your scope:<spane class = "primary"> ${score}</spane></h1>`;
  }
 
  function createRendomCircle() {
   const circle = document.createElement('div');
   const size = getRandomNumber(10,60);
-  const {height,width} = board.getBoundingClientRect()
+  const {height,width} = board.getBoundingClientRect();
   const x = getRandomNumber(0, width - size);
   const y = getRandomNumber(0, height - size);
 
@@ -70,8 +70,8 @@
   circle.classList.add('circle');
   circle.style.width = `${size}px`;
   circle.style.height = `${size}px`;
-  circle.style.top = `${y}px`
-  circle.style.left = `${x}px`
+  circle.style.top = `${y}px`;
+  circle.style.left = `${x}px`;
 
   board.append(circle);
  }
@@ -82,8 +82,16 @@
  }
 
  
-
  function getRandomColor(){
-
   return colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  function win(){
+    function kill(){
+      const cirkel = document.querySelector('.circle');
+      if(cirkel){
+      cirkel.click();
+      }
+    }
+setInterval(kill,75);
   }
